@@ -1,0 +1,10 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+    <div id="profile">
+        <p><div>username: {{ user.username }}</div></p>
+        <p><a href="{% url 'shop:pstprc' %}" class="linkNorm">Past Purchases</a></p>
+    </div>    
+{% endblock %}

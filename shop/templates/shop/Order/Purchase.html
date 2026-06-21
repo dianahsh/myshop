@@ -1,0 +1,12 @@
+{% extends 'shop/base.html'%}
+
+{% block title %}Buy{% endblock %}
+
+{% block content %}
+    <form method="post" class="form">
+        {% csrf_token %}
+        <label for="address">Address:</label>
+        <input type="text" name="address">
+        <p><input type="submit" value="Buy" class="button"></p>
+    </form>
+{% endblock %}

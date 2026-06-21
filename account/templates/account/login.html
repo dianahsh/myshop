@@ -1,0 +1,12 @@
+{% extends "account/base.html" %}
+
+{% block title %}log in{% endblock %}
+
+{% block content %}
+    <div style="margin: 20px; font-size: 20px;">New User? <a href="{% url 'account:sign_up' %}" class="linkNorm">Register</a></div>
+    <form method="POST" class="form">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="log in" class="button"></p>
+    </form>
+{% endblock %}

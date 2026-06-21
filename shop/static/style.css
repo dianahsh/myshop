@@ -1,0 +1,125 @@
+body {
+    font-family:sans-serif;
+}
+img {
+    max-height: 300px;
+    max-width: 200px;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid darkblue 1px;
+    padding: 3px;
+}
+#header a:hover {
+    background-color: lightseagreen;
+}
+#header a {
+    padding: 3px;
+    font-size: 25px;
+    text-decoration: none;
+    color: blue;
+}
+.eachFlex a {
+    margin: 20px;
+}
+#wel {
+    text-align: center;
+}
+.Pcontain {
+    margin: 5px;
+    padding: 5px;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+    box-shadow: 10px 10px 5px lightgrey;
+    background-color: white;
+}
+.Pcontain:hover {
+    background-color: lightblue;
+}
+.Plink {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+.Plink:hover {
+    font-size: 27px;
+    color: rgb(92, 87, 243);
+}
+.grcontain {
+    display: grid;
+    margin: 50px;
+    gap: 10px;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+}
+#oneP {
+    display: flex;
+    flex-direction: column;
+}
+#oneIn {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+}
+.oneEach {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    border: solid 2px royalblue;
+    border-radius: 3px;
+    padding: 40px;
+}
+.button {
+    color: white;
+    font-size: 23px;
+    background-color: blueviolet;
+    width: 110px;
+    margin: 10px;
+}
+.button:hover {
+    background-color: purple;
+}
+.form {
+    justify-self: center;
+    margin: 10%;
+    font-size: 24px;
+}
+.ordcontain {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    margin: 10px;
+}
+.oneorder {
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+    border: solid lightskyblue;
+    padding: 15px;
+    width: 80%;
+}
+#profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 25px;
+}
+.linkNorm {
+    padding: 3px;
+    font-size: 23px;
+    text-decoration: underline;
+    color: skyblue;
+}
+.linkNorm:hover {
+    text-decoration: none;
+}

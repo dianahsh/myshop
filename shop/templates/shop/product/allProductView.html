@@ -1,0 +1,22 @@
+{% extends "shop/base.html" %}
+
+{% block title %}shop{% endblock %}
+
+{% block content %}
+    <h1>Products:</h1>
+    <div class="grcontain">
+        {% for x in products %}
+        <a class="Plink" href="{% url 'shop:product_detail' x.id %}">
+            <div class="Pcontain">
+                <div >{{ x.name }}</div>
+                <div class="imgcontain">
+                    {% if x.image %}
+                        <img src="{{x.image.url}}" alt="image of the product">
+                    {% endif %}
+                </div>
+                <div>{{ x.price }}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

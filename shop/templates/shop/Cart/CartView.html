@@ -1,0 +1,22 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+    <div class="grcontain">
+        {% for s in listShops %}
+        <div class="Pcontain">
+            <div>{{ s.product.name }}</div>
+            <div>{{ s.quantity }}</div>
+            <a href="{% url 'shop:product_detail' s.product.id%}">view</a>
+        </div>    
+        {% endfor %}
+    </div>
+    <div>
+        {% if listShops %}
+            <a href="{% url 'shop:purchase' %}"><button class="button">Buy</button></a>
+        {% else %}
+            <div style="text-align: center; font-size: 100px;">Empty</div>
+        {% endif %}
+    </div>
+{% endblock %}

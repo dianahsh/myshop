@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block script %}{% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+    </head>
+
+    <body>
+        <div id="header">
+            <div class="eachFlex">
+                <a href="{% url 'shop:home' %}">Home</a>
+                <a href="{% url 'shop:all_product_view' %}">Products</a>
+                <a href="{% url 'shop:cart_view' %}">Cart</a>
+            </div>
+            <div class="eachFlex">
+                {% if user.is_authenticated %}
+                    <a href=" {% url 'shop:profile' %}">{{ user.username }}</a>
+                    <a href="{% url 'account:logout' %}">log Out</a>
+                {% else %}
+                    <a href="{% url 'account:log_in' %}">Log in</a>
+                    <a href="{% url 'account:sign_up' %}">Register</a>
+                {% endif %}
+            </div>    
+        </div>
+        <div>{% block content %}{% endblock %}</div>
+    </body>
+</html>

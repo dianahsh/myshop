@@ -1,0 +1,45 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+{% block script %}
+    <script src="{% static 'mixjas.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="oneP">
+        <h1>{{ product.name }}</h1>
+        <div id="oneIn">
+            <div class="oneEach">
+                {% if product.image %}
+                    <img src="{{product.image.url}}">
+                {% endif %}
+                <div>{{product.description}}</div>
+                <div style="font-size: 18px;">Category: {{product.category}}</div>
+                <div>{{product.price}}</div>
+            </div>
+            <div class="oneEach">
+                <div id="q">{{ quantity }}</div>
+                <div id="btnad">
+                    {% if product.available %}
+                        {% csrf_token %}
+                        <button id="decrease" style="display: none;" data-pid="{{ product.id }}" class="button">-</button>
+                        <button id="addToCart" data-pid="{{ product.id }}" class="button">
+                            {% if quantity > 0 %}
+                                +
+                            {% else %}
+                                add to shopping cart
+                            {% endif %}
+                        </button>
+                    {% else %}
+                        <div style="background-color: rgb(193, 191, 191);">Not Available!</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

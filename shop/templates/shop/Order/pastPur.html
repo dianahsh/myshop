@@ -1,0 +1,17 @@
+{% extends 'shop/base.html'%}
+
+{% block title %}History{% endblock %}
+
+{% block content %}
+    <h1>Purchase history</h1>
+    <div class="ordcontain">
+    {% for i in orders %}
+        <div class="oneorder">
+            {% for x in i.orders_list.all %}
+                <div>| <a href="{% url 'shop:product_detail' x.product.id%}" class="linkNorm">{{x.product}}</a> x {{x.quantity}} |</div>
+            {% endfor %}
+            <div>{{i.date}}</div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
